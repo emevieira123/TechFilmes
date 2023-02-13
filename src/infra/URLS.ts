@@ -1,0 +1,16 @@
+export const URLS = {
+  INICIO: '',
+  FILMES: '/filmes',
+  FILME_ID: '/filme/:id',
+  SERIES: '/series',
+  SERIE_ID: '/serie/:id',
+  ANIMES: '/animes',
+  FAQ: '/faq',
+  PRIVACY_POLICY: '/privacy-policy',
+  TERMS_OF_USE: '/terms-of-use',
+  LOGIN: '/login-admin',
+  DASHBOARD: '/admin/dashboard',
+  MOVIES: '/admin/movies',
+  BANNER: '/admin/banner',
+  USERS: '/admin/users',
+}
