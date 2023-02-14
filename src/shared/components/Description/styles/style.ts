@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const MovieDescriptionContainer = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-`;
-
 export const DescriptionStyle = styled.div`
   height: 50vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${props => props.theme});
@@ -47,6 +41,9 @@ export const MovieInfo = styled.div`
 
   span {
     margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
   }
 
   button {

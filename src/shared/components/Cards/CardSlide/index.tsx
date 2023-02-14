@@ -2,7 +2,7 @@ import moment from "moment";
 import { ImgContainer, InfoContainer } from "./styles/style";
 
 interface CardProps {
-  key?: React.Key | null | undefined;
+  index: number;
   onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
   title: string;
   anoLacamento: string;
@@ -12,11 +12,10 @@ interface CardProps {
 
 const IMG = import.meta.env.VITE_IMG;
 
-export function CardSlide({key, title, votos, urlImg, anoLacamento, onClick}: CardProps) {
+export function CardSlide({index, title, votos, urlImg, anoLacamento, onClick}: CardProps) {
   return (
     <ImgContainer
-      key={key}
-      className={`keen-slider__slide number-slide${key}`}
+      className={`keen-slider__slide number-slide${index}`}
       onClick={onClick}
     >
       <InfoContainer>

@@ -5,7 +5,7 @@ import { AdmLayout } from "../shared/layouts/AdmLayout";
 
 import { HomePage } from "../app/HomePage/screen";
 import { Filmes } from "../app/MoviesPage/Filmes/screen";
-import { MovieDescription } from "../app/MoviesPage/MovieDescription";
+import { MovieDescription } from "../app/MoviesPage/Filmes/MovieDescription";
 
 import { Faq } from "../shared/pages/FAQ";
 import { PrivacyPolice } from "../shared/pages/PrivacyPolice";
@@ -17,6 +17,7 @@ import { Dashboard } from "../app/admin/Dashboard/screen";
 import { Banner } from "../app/admin/Banner/screen";
 import { Movies } from "../app/admin/Movies/screen";
 import { SearchPage } from "../app/SearchPage/screen";
+import { SerieDescription } from "../app/MoviesPage/Series/SerieDescription";
 
 export function Router() {
   return (
@@ -26,6 +27,7 @@ export function Router() {
         <Route path={URLS.INICIO} element={<HomePage />} />
         <Route path={URLS.FILMES} element={<Filmes />} />
         <Route path={URLS.FILME_ID} element={<MovieDescription />} />
+        <Route path={URLS.SERIE_ID} element={<SerieDescription />} />
         <Route path={URLS.PESQUISAR} element={<SearchPage />} />
         <Route path={URLS.FAQ} element={<Faq />} />
         <Route path={URLS.PRIVACY_POLICY} element={<PrivacyPolice />} />

@@ -49,6 +49,7 @@ export function SlideCards({ dataSource, loading, type }: SlideCardsProps) {
                 return (
                   <CardSlide
                     key={i}
+                    index={i}
                     title={movie.title || movie.name}
                     anoLacamento={movie.release_date}
                     votos={movie.vote_average}

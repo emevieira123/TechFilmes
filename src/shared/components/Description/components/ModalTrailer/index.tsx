@@ -1,7 +1,7 @@
 import { Modal, Row } from "antd";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
-import useGetTrailer from "../../../../../shared/hooks/useGetTrailer";
+import useGetTrailer from "../../../../hooks/useGetTrailer";
 
 interface ModalTrailerType {
   visible: boolean;

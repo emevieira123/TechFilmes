@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { IconMediafire } from "../../../../../shared/icons/IconMediafire";
-import { IconMega } from "../../../../../shared/icons/IconMega";
-import { IconTorrent } from "../../../../../shared/icons/IconTorrent";
+import { IconMediafire } from "../../../../icons/IconMediafire";
+import { IconMega } from "../../../../icons/IconMega";
+import { IconTorrent } from "../../../../icons/IconTorrent";
 
 import ImgDownloads from "../../../../../assets/dark-texture.jpeg";
 
