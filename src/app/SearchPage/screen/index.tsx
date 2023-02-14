@@ -1,11 +1,9 @@
-import { Row } from "antd";
-import styled from "styled-components";
-import { BiSearchAlt } from 'react-icons/bi';
 import { useState } from "react";
 import useGetSearch from "../hooks/useGetSearch";
 import { CardList } from "../../../shared/components/Cards/CardList";
 import { useForm } from "react-hook-form";
-import { InputContainer, NotFound, SearchContainer } from "../styles/style";
+import { NotFound, SearchContainer } from "../styles/style";
+import { InputSearch } from "../components/InputSearch";
 
 export function SearchPage() {
   const [searchFilmes, setSearchFilmes] = useState('');
@@ -28,16 +26,7 @@ export function SearchPage() {
   return (
     <SearchContainer>
 
-      <InputContainer>
-        <form onSubmit={handleSubmit(handleSearch)}>
-          <input
-            type="text"
-            placeholder="Pesquisar filme ou série..."
-            {...register("name")}
-          />
-          <button type="submit"><BiSearchAlt size={25} /></button>
-        </form>
-      </InputContainer>
+      <InputSearch onSubmit={handleSubmit(handleSearch)} register={register} />
 
       { !searchFilmes && !searchSeries && <div style={{ width: '100%', height: '100vh' }}></div> }
 
