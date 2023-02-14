@@ -1,19 +1,26 @@
+import { Row } from "antd";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import LogoPlayer from '../../../../assets/LogoVideoPlayer.svg';
+import { URLS } from "../../../../infra/URLS";
 import { Menus } from "./Menus";
+
+import { BsSearch } from 'react-icons/bs';
 
 export function Menu() {
   return (
     <MenuContainer>
-      <h3><img src={LogoPlayer} />Tech Filmes HD</h3>
-      <MenuContainerButtons>
-        {Menus.map((menu, i) => {
-          return (
-            <ButtonsMenu to={menu.src} key={i}>{menu.title}</ButtonsMenu>
-          )
-        })}
-      </MenuContainerButtons>
+      <Row>
+        <h3><img src={LogoPlayer} />Tech Filmes HD</h3>
+        <MenuContainerButtons>
+          {Menus.map((menu, i) => {
+            return (
+              <ButtonsMenu to={menu.src} key={i}>{menu.title}</ButtonsMenu>
+            )
+          })}
+        </MenuContainerButtons>
+      </Row>
+      <ButtonPesquisar to={URLS.PESQUISAR}><BsSearch size={25} /></ButtonPesquisar>
     </MenuContainer>
   );
 }
@@ -26,6 +33,7 @@ const MenuContainer = styled.div`
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   h3 {
     color: ${props => props.theme.yellowDark};
@@ -64,6 +72,17 @@ const ButtonsMenu = styled(NavLink)`
 
   &.active {
     border-bottom: 1px solid ${props => props.theme.yellowDark};
+    color: ${props => props.theme.white};
+  }
+`;
+
+const ButtonPesquisar = styled(NavLink)`
+  text-decoration: none;
+  color: ${props => props.theme.gray400};
+  &:hover {
+    color: ${props => props.theme.white};
+  }
+  &.active {
     color: ${props => props.theme.white};
   }
 `;

@@ -9,6 +9,7 @@ export const Container = styled(Row)`
 `;
 
 export const GripStyle = styled(Row)`
+  /* width: 12.07rem; */
   height: 36vh;
   background-image: ${props => props.theme};
   background-size: cover;

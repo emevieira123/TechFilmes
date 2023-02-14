@@ -5,6 +5,7 @@ export const URLS = {
   SERIES: '/series',
   SERIE_ID: '/serie/:id',
   ANIMES: '/animes',
+  PESQUISAR: '/pesquisar',
   FAQ: '/faq',
   PRIVACY_POLICY: '/privacy-policy',
   TERMS_OF_USE: '/terms-of-use',

@@ -16,6 +16,7 @@ import { Login } from "../app/Login/screen";
 import { Dashboard } from "../app/admin/Dashboard/screen";
 import { Banner } from "../app/admin/Banner/screen";
 import { Movies } from "../app/admin/Movies/screen";
+import { SearchPage } from "../app/SearchPage/screen";
 
 export function Router() {
   return (
@@ -25,6 +26,7 @@ export function Router() {
         <Route path={URLS.INICIO} element={<HomePage />} />
         <Route path={URLS.FILMES} element={<Filmes />} />
         <Route path={URLS.FILME_ID} element={<MovieDescription />} />
+        <Route path={URLS.PESQUISAR} element={<SearchPage />} />
         <Route path={URLS.FAQ} element={<Faq />} />
         <Route path={URLS.PRIVACY_POLICY} element={<PrivacyPolice />} />
         <Route path={URLS.TERMS_OF_USE} element={<TermsOfUse />} />
