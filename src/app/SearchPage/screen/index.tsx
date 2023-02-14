@@ -5,6 +5,7 @@ import { useState } from "react";
 import useGetSearch from "../hooks/useGetSearch";
 import { CardList } from "../../../shared/components/Cards/CardList";
 import { useForm } from "react-hook-form";
+import { InputContainer, NotFound, SearchContainer } from "../styles/style";
 
 export function SearchPage() {
   const [searchFilmes, setSearchFilmes] = useState('');
@@ -26,6 +27,7 @@ export function SearchPage() {
 
   return (
     <SearchContainer>
+
       <InputContainer>
         <form onSubmit={handleSubmit(handleSearch)}>
           <input
@@ -37,54 +39,22 @@ export function SearchPage() {
         </form>
       </InputContainer>
 
-      {!searchFilmes && !searchSeries && <div style={{ width: '100%', height: '100vh' }}></div>}
+      { !searchFilmes && !searchSeries && <div style={{ width: '100%', height: '100vh' }}></div> }
+
+      { searchFilmes && <CardList loading={LoadingFilmes} dataSource={searchFilmesData} type="filmes" /> }
+
+      { searchSeries && <CardList loading={LoadingSeries} dataSource={searchSeriesData} type="series" /> }
+
       {
-        searchFilmes && <CardList loading={LoadingFilmes} dataSource={searchFilmesData} type="filmes" />
+        searchFilmesData?.length === 0 &&
+        searchFilmes &&
+        searchSeriesData?.length === 0 &&
+        searchSeries &&
+        <NotFound>
+          <span>Nenhum resultado encontrado, pesquise novamente.</span>
+        </NotFound>
       }
-      {
-        searchSeries && <CardList loading={LoadingSeries} dataSource={searchSeriesData} type="series" />
-      }
+
     </SearchContainer>
   );
 }
-
-const SearchContainer = styled(Row)`
-  padding: 1rem 3rem;
-  height: 80vh;
-`;
-
-const InputContainer = styled(Row)`
-  width: 100%;
-
-  form {
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  input {
-    width: 96.5%;
-    height: 3rem;
-    border: 0;
-    font-size: 1.25rem;
-    text-align: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background: ${props => props.theme.gray800};
-    color: ${props => props.theme.gray300};
-    &:focus {
-      outline: none;
-    }
-  }
-
-  button {
-    width: 3.5%;
-    height: 3rem;
-    border: 0;
-    background: ${props => props.theme.gray800};
-    color: ${props => props.theme.gray300};
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    cursor: pointer;
-  }
-`;
