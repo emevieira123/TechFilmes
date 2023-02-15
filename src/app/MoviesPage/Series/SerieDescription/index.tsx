@@ -6,9 +6,6 @@ export function SerieDescription() {
   const { id } = useParams();
   const {data: SerieDescription, isLoading} = useGetSerieDescription(id);
 
-  console.log('MovieDescription ', SerieDescription);
-  console.log('id ', id);
-
   return (
     <>
       <Description dataSource={SerieDescription} id={Number(id)} loading={isLoading} />
