@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import { TypeSlideBanner } from "../../../../app/HomePage/utils/TypeSlideBanner";
+import { TypeSlideBanner } from "../../../../app/HomePage/types/TypeSlideBanner";
 import { ButtonSlide, ButtonSlideCircle, ImgContainer } from "./styles";
 
 interface BannerSlideProps {

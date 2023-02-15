@@ -1,7 +1,6 @@
-import { Modal, Row } from "antd";
 import ReactPlayer from "react-player";
-import styled from "styled-components";
 import useGetTrailer from "../../../../hooks/useGetTrailer";
+import { ModalTitle, ModalTrailerStyle } from "./style";
 
 interface ModalTrailerType {
   visible: boolean;
@@ -38,57 +37,6 @@ export function ModalTrailer({ id, visible, closeModal }: ModalTrailerType) {
         <span>O trailer ainda não está disponível</span>
       }
 
-      {/* <iframe
-        style={{width: '600px', height: '400px', border: '0'}}
-        className="w-auto sm:w-[80%] h-60 sm:h-80 sm:mx-4 sm:mb-4"
-        src={
-          url.includes("/watch?v=")
-            ? url.replace("/watch?v=", "/embed/")
-            : url
-        }
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe> */}
-
-      {/* <iframe
-        style={{width: '600px', height: '400px', border: '0'}}
-        className="w-auto sm:w-[80%] h-60 sm:h-80 sm:mx-4 sm:mb-4"
-        src="https://embed.warezcdn.net/serie/tt3107288"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe> */}
-
     </ModalTrailerStyle>
   );
 }
-
-const ModalTrailerStyle = styled(Modal)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .ant-modal-body,
-  .ant-modal-content,
-  .ant-modal-header {
-    background-color: ${props => props.theme.gray900};
-  }
-
-  .ant-modal-title {
-    color: ${props => props.theme.white};
-  }
-`;
-
-const ModalTitle = styled(Row)`
-  justify-content: space-between;
-  align-items: center;
-
-  strong {
-    font-size: 1.25rem;
-  }
-  span {
-    cursor: pointer;
-    &:hover {
-      color: ${props => props.theme.yellowDark};
-    }
-  }
-`;

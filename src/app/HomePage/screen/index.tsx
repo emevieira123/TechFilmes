@@ -3,12 +3,12 @@ import styled from "styled-components"
 import { BannerSlide } from "../../../shared/components/Slides/BannerSlide";
 import { SlideCards } from "../../../shared/components/Slides/SlideCards";
 import useGetMovies from "../../../shared/hooks/useGetMovies";
-import useGetSeriesPopular from "../../../shared/hooks/useGetSeriesPopular";
+import useGetSeries from "../../../shared/hooks/useGetSeries";
 import { bannerMock } from "../__mocks__/bannerMock"
 
 export function HomePage() {
   const { data: MoviesData, isLoading } = useGetMovies('now_playing');
-  const { data: PopularSeriesData, isLoading: LoadingSeries } = useGetSeriesPopular();
+  const { data: SeriesData, isLoading: LoadingSeries } = useGetSeries();
 
   return (
     <>
@@ -22,7 +22,7 @@ export function HomePage() {
       <div style={{ marginTop: '3rem' }}>
         <TitleSection>Séries</TitleSection>
       </div>
-      <SlideCards dataSource={PopularSeriesData} loading={LoadingSeries} type="series" />
+      <SlideCards dataSource={SeriesData?.results} loading={LoadingSeries} type="series" />
     </>
   );
 }

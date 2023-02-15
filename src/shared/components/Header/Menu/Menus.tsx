@@ -13,8 +13,8 @@ export const Menus = [
     title: 'Séries',
     src: URLS.SERIES,
   },
-  {
-    title: 'Animes',
-    src: URLS.ANIMES,
-  },
+  // {
+  //   title: 'Animes',
+  //   src: URLS.ANIMES,
+  // },
 ];

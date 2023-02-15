@@ -1,6 +1,4 @@
-import { Row } from "antd";
 import { useState } from "react";
-import styled from "styled-components";
 import { CardList } from "../../../../shared/components/Cards/CardList";
 import { SimplePagination } from "../../../../shared/components/Paginations/SimplePagination";
 import useGetMovies from "../../../../shared/hooks/useGetMovies";

@@ -7,11 +7,7 @@ import { DescriptionTypes, GenreType } from "../../types/DescriptionTypes";
 import { DescriptionStyle, DetalhesContainer, MovieInfo } from "./styles/style";
 
 import { AiOutlineStar } from 'react-icons/ai';
-import { Row } from "antd";
-import styled from "styled-components";
 import { WarezPlayer } from "../Players/WarezPlayer";
-
-
 
 interface DescriptionProps {
   dataSource: DescriptionTypes;
@@ -94,28 +90,3 @@ export function Description({ dataSource, loading, id }: DescriptionProps) {
     </>
   );
 }
-
-const ButtonAssistirContainer = styled(Row)`
-  /* border: 1px solid red; */
-  width: 100%;
-  height: 10rem;
-  justify-content: center;
-  align-items: center;
-
-  button {
-    height: 3.5rem;
-    padding: 0 5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: 0;
-    border-radius: 10rem;
-    background: ${props => props.theme.gray800};
-    color: ${props => props.theme.yellowDark};
-    cursor: pointer;
-    transition: all 0.25s;
-    &:hover {
-      color: ${props => props.theme.gray800};
-      background: ${props => props.theme.yellowDark};
-    }
-  }
-`;

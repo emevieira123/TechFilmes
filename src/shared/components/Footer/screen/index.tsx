@@ -1,5 +1,4 @@
 import Logo from '../../../../assets/LogoVideoPlayer.svg';
-import { AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from 'react-icons/ai';
 import { ContainerGridFooter, Copyright, FooterContainer, GridInfo, LinksFooter } from "../styles";
 import { infoFooter, socialFooter } from "../utils/DataFooter";
 
@@ -36,7 +35,6 @@ export function Footer() {
           <span>
             Tech Filmes HD é uma plataforma online para baixar filmes e séries gratuitamente.
             Atualizamos nossos conteúdos constantemente, oferecendo aos nossos usuários as últimas atualizações disponíveis.
-            {/* Somos reconhecidos por sermos os mais rápidos postadores de conteúdo de filmes e séries do Brasil, garantindo acesso imediato aos conteúdos mais recentes. */}
           </span>
         </GridInfo>
       </ContainerGridFooter>

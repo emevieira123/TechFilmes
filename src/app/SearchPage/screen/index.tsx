@@ -15,12 +15,6 @@ export function SearchPage() {
   const { data: searchFilmesData, isLoading: LoadingFilmes } = useGetSearch("movie", searchFilmes);
   const { data: searchSeriesData, isLoading: LoadingSeries } = useGetSearch("tv", searchSeries);
 
-  // const totalSearchData = searchFilmesData?.concat(searchSeriesData);
-
-  // console.log('totalSearchData',totalSearchData);
-  console.log('searchFilmesData',searchFilmesData);
-  console.log('series',searchSeriesData);
-
   function handleSearch(data: any) {
     const { name } = data;
     setSearchFilmes(name);

@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const MenuContainer = styled.div`
   height: 4rem;
-  /* border-bottom: 1px solid ${props => props.theme.gray800}; */
   padding: 0 4rem;
   margin-bottom: 5px;
 

@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import getMovieDescription from "../query/getMovieDescription";
+import getMovieDescription from "../queries/getMovieDescription";
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 const traducao = import.meta.env.VITE_TRADUCAO;

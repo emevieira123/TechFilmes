@@ -1,7 +1,7 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { Arrow } from "./components/Arrow"
-import { TypeSlideFilmes } from "../../../../app/HomePage/utils/TypeSlideFilmes"
+import { TypeSlideFilmes } from "../../../../app/HomePage/types/TypeSlideFilmes"
 import { useNavigate } from "react-router-dom"
 import { URLS } from "../../../../infra/URLS"
 import { ArrowContainer, ContainerSlide } from "./styles/style"

@@ -20,7 +20,6 @@ export const TableListStyle = styled(Table)`
   }
 
   .ant-table-tbody > tr.ant-table-row:hover > td {
-      /* background: none !important; */
     background: ${props => props.theme.gray700};
     color: ${props => props.theme.white};
   }
