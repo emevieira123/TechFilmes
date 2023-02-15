@@ -15,4 +15,5 @@ export interface DescriptionTypes {
   episode_run_time: number[];
   vote_average: number;
   number_of_seasons: number;
+  imdb_id: string;
 }

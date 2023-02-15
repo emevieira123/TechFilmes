@@ -7,6 +7,9 @@ import { DescriptionTypes, GenreType } from "../../types/DescriptionTypes";
 import { DescriptionStyle, DetalhesContainer, MovieInfo } from "./styles/style";
 
 import { AiOutlineStar } from 'react-icons/ai';
+import { Row } from "antd";
+import styled from "styled-components";
+import { WarezPlayer } from "../Players/WarezPlayer";
 
 
 
@@ -19,6 +22,7 @@ interface DescriptionProps {
 const IMG = import.meta.env.VITE_IMG;
 
 export function Description({ dataSource, loading, id }: DescriptionProps) {
+  const [assistir, setAssistir] = useState(false);
   const [modalTrailer, setModalTrailer] = useState(false);
 
   let description = dataSource?.overview;
@@ -35,9 +39,8 @@ export function Description({ dataSource, loading, id }: DescriptionProps) {
     return `${textoHoras}h.${textoMinutos}min`;
   };
 
-  const teste = dataSource?.episode_run_time ?? [];
-  const teste2 = teste[0];
-
+  const times = dataSource?.episode_run_time ?? [];
+  const runtime = times[0];
 
   return (
     <>
@@ -54,7 +57,7 @@ export function Description({ dataSource, loading, id }: DescriptionProps) {
               <MovieInfo>
                 <span>{moment(dataSource?.release_date).format('YYYY')}</span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <IoTimerOutline size={18} /> {handleConverteHoras(dataSource?.runtime || teste2 || 0)}
+                  <IoTimerOutline size={18} /> {handleConverteHoras(dataSource?.runtime || runtime || 0)}
                 </span>
                 <span><AiOutlineStar size={18} /> {dataSource?.vote_average.toFixed(1)}</span>
                 <button onClick={() => setModalTrailer(true)}>TRAILER</button>
@@ -65,7 +68,6 @@ export function Description({ dataSource, loading, id }: DescriptionProps) {
               </span>
 
               <span>Genero: {dataSource?.number_of_seasons ? 'Serie' : 'Filme'}</span>
-              {/* <span>Idioma: {movie.idioma.map((idi: any) => { return <span key={idi}>{idi} </span> })}</span> */}
               <strong>Sinopse</strong>
               <p>{description}</p>
             </DetalhesContainer>
@@ -80,10 +82,40 @@ export function Description({ dataSource, loading, id }: DescriptionProps) {
             />
           }
 
-          <Downloads />
+          {
+            !dataSource?.number_of_seasons &&
+            <WarezPlayer imdbId={dataSource?.imdb_id} value={assistir} setValue={setAssistir} />
+          }
+
+          {dataSource?.number_of_seasons && <Downloads />}
 
         </div>
       }
     </>
   );
 }
+
+const ButtonAssistirContainer = styled(Row)`
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 10rem;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    height: 3.5rem;
+    padding: 0 5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 0;
+    border-radius: 10rem;
+    background: ${props => props.theme.gray800};
+    color: ${props => props.theme.yellowDark};
+    cursor: pointer;
+    transition: all 0.25s;
+    &:hover {
+      color: ${props => props.theme.gray800};
+      background: ${props => props.theme.yellowDark};
+    }
+  }
+`;
