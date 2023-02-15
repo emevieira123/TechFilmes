@@ -34,13 +34,13 @@ export function Router() {
         <Route path={URLS.TERMS_OF_USE} element={<TermsOfUse />} />
       </Route>
 
-      <Route path={URLS.LOGIN} element={<Login />} />
+      {/* <Route path={URLS.LOGIN} element={<Login />} />
 
       <Route path="/admin" element={<AdmLayout />}>
         <Route path={URLS.DASHBOARD} element={<Dashboard />} />
         <Route path={URLS.BANNER} element={<Banner />} />
         <Route path={URLS.MOVIES} element={<Movies />} />
-      </Route>
+      </Route> */}
 
       <Route path='*' element={<PageNotFound />} />
 
