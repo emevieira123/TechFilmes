@@ -29,14 +29,14 @@ export function SearchPage() {
 
       { !searchFilmes && !searchSeries && <div style={{ width: '100%', height: '100vh' }}></div> }
 
-      { searchFilmes &&
+      { searchFilmes && searchFilmesData?.length > 0 &&
         <CardSearch>
           <h1>Filmes</h1>
           <CardList loading={LoadingFilmes} dataSource={searchFilmesData} type="filmes" />
         </CardSearch>
       }
 
-      { searchSeries &&
+      { searchSeries && searchSeriesData?.length > 0 &&
         <CardSearch>
           <h1>Séries</h1>
           <CardList loading={LoadingSeries} dataSource={searchSeriesData} type="series" />
