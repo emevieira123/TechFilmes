@@ -13,7 +13,7 @@ export function Series() {
       <CardList
         dataSource={SeriesData?.results}
         loading={isLoading}
-        type="filmes"
+        type="series"
       />
 
       <SimplePagination
